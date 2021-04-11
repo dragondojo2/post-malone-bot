@@ -18,7 +18,7 @@ const client = new twit({
 
 axios
   .get(
-    "https://youtube.googleapis.com/youtube/v3/playlistItems?part=contentDetails&maxResults=10&playlistId=UUOhtMAg7xh8wv_wUHMgFc-Q&key=AIzaSyCB3wG7_Cyh20HHKm7vfxjbWnZp0Z9GpgU"
+    `https://youtube.googleapis.com/youtube/v3/playlistItems?part=contentDetails&maxResults=10&playlistId=UUOhtMAg7xh8wv_wUHMgFc-Q&key=${process.env.GOOGLE_KEY}`
   )
   .then((res) => {
     const headerDate =
@@ -29,7 +29,7 @@ axios
 
     axios
       .get(
-        `https://youtube.googleapis.com/youtube/v3/videos?part=snippet&id=${videoID}&key=AIzaSyCB3wG7_Cyh20HHKm7vfxjbWnZp0Z9GpgU`
+        `https://youtube.googleapis.com/youtube/v3/videos?part=snippet&id=${videoID}&key=${process.env.GOOGLE_KEY}`
       )
       .then((res) => {
         const headerDate =
@@ -69,7 +69,7 @@ Confira a ultima musica disponivel:
           );
         }
         
-        BotInit();
+        // BotInit();
       })
       .catch((err) => {
         console.log("Erro no ultimo video: ", err.message);
