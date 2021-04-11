@@ -69,7 +69,7 @@ Confira a ultima musica disponivel:
           );
         }
         
-        // BotInit();
+        BotInit();
       })
       .catch((err) => {
         console.log("Erro no ultimo video: ", err.message);
