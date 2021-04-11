@@ -64,6 +64,8 @@ Confira a ultima musica disponivel:
             function (error, tweet, response) {
               if (!error) {
                 console.log("Funcionou");
+              }else{
+                console.log(error);
               }
             }
           );
